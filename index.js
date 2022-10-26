@@ -4,8 +4,7 @@ const fs = require('fs')
 const [,, inputFile, outputFile, flag] = argv
 if (inputFile === undefined) {
   process.stdin.on('data', (inputData) => {
-    const convertedInputData = inputData.toString().trim()
-    const newString = convertedInputData.split('\n')
+    const newString = inputData.toString().trim().split('\n')
     newString.forEach((line, index) => {
       console.log(`${index + 1}: ${line}`)
     })
